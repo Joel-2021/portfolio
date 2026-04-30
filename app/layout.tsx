@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
+// @ts-ignore
 import "./globals.css";
+import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/theme-provider";
+import { VerticalLines } from "@/components/vertical-lines";
+import { Header } from "@/components/header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const geist = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,12 +21,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <html lang="en" className={cn("font-sans", inter.variable, geist.variable)}>
+        <body className={`${inter.variable} ${geist.variable} antialiased`}>
+          <div className="min-h-screen w-full flex items-stretch px-2 md:px-0">
+            <VerticalLines classname="left-0 md:block hidden" />
+            <div className="min-h-screen h-full max-w-4xl w-full mx-auto border-x border-muted">
+              <Header />
+              {children}
+            </div>
+            <VerticalLines classname="right-0 hidden md:block"/>
+          </div>
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }

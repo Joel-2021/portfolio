@@ -1,0 +1,47 @@
+export const experiences = [
+  {
+    company: "ConnectingDots Infotech",
+    role: "Software Developer",
+    duration: "June 2023 - April 2026",
+    location: "Pune(Remote)",
+    technologies: [
+      { icon: "angular.svg", name: "Angular" },
+      { icon: "nextjs.svg", name: "Next.js" },
+      { icon: "tailwind.svg", name: "Tailwind CSS" },
+      { icon: "typescript.svg", name: "TypeScript" },
+      { icon: "scss.svg", name: "SCSS" },
+      { icon: "react.svg", name: "React" },
+      { icon: "nodejs.svg", name: "Node.js" },
+      { icon: "postman.svg", name: "Postman" },
+    ],
+    description: [
+      "Built modular Angular applications for OTT and SaaS platforms using reusable, feature-based architecture.",
+      "Centralized data flow with RxJS, reducing redundant API calls and improving performance.",
+      "Developed live streaming and private call features with real-time UI interactions.",
+      "Improved load performance through lazy loading and optimized component rendering.",
+      "Integrated Razorpay, Stripe, and Paytm with complete payment flows including checkout and verification.",
+      "Streamlined support workflows by consolidating multiple tools into a single Freshdesk plugin.",
+      "Collaborated with cross-functional teams to deliver scalable features and enhance user experience.",
+    ],
+  },
+  {
+    company: "Genex Corporate Services Ltd",
+    role: "Intern Software Developer",
+    duration: "Jan 2023 - May 2026",
+    location: "Hyderabad(Remote)",
+    technologies: [
+      { icon: "tailwind.svg", name: "Tailwind CSS" },
+      { icon: "react.svg", name: "React" },
+      { icon: "nodejs.svg", name: "Node.js" },
+      { icon: "postman.svg", name: "Postman" },
+      { icon: "express.svg", name: "Express.js" },
+      { icon: "javascript.svg", name: "JavaScript" },
+      { icon: "material-ui.svg", name: "Material UI" },
+    ],
+    description: [
+      "Revamped the Vorkinsta website with improved UI and UX.",
+      "Developed responsive React components for a rent management system.",
+      "Integrated REST APIs in collaboration with backend teams.",
+    ],
+  },
+];
