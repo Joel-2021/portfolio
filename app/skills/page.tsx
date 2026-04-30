@@ -2,8 +2,15 @@ import { HorizontalLines } from "@/components/horizontal-lines";
 import { cn } from "@/lib/utils";
 import { skills } from "@/lib/constants/skills";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Skills",
+  description: "Full Stack skills of Joel C V in React, Angular, Node.js, and modern web development.",
+};
 
 const SkillsPage = () => {
+
   return (
     <>
       <h1 className="text-xl font-bold pt-2 pb-1 px-2">Skills</h1>
