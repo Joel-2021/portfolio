@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { Button } from "./button";
 
 type IconHandle = {
@@ -22,9 +22,7 @@ export const IconButton = ({
   redirectLink: string;
 }) => {
   const iconRef = useRef<IconHandle>(null);
-    useEffect(()=>{
-        console.log(redirectLink);
-    },[])
+
   return (
     <Button
       variant="outline"

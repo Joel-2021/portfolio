@@ -3,7 +3,6 @@ import Link from "next/link";
 import { LinkedinIcon } from "@/components/ui/linkedin-icon";
 import { GithubIcon } from "@/components/ui/github-icon";
 import Experience from "@/components/experience";
-import { Button } from "@/components/ui/button";
 import { DownloadIcon } from "@/components/ui/download-icon";
 import { MailIcon } from "@/components/ui/mail-icon";
 import Education from "@/components/education";
@@ -31,7 +30,7 @@ export default function Home() {
         </div>
       </div>
       <p className="border-t border-muted text-sm px-4 py-1 font-mono">
-        FullStack Developer | Open Source Enthusiast | Tech Blogger
+        FullStack Developer | Angular Developer | React Developer 
       </p>
       <HorizontalLines />
 

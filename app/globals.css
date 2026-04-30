@@ -128,3 +128,37 @@
     @apply font-sans;
   }
 }
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.marquee-left {
+  animation: marquee-left 60s linear infinite;
+}
+
+.marquee-right {
+  animation: marquee-right 60s linear infinite;
+}
+
+.marquee-left:hover {
+  animation-play-state: paused;
+}
+
+.marquee-right:hover {
+  animation-play-state: paused;
+}

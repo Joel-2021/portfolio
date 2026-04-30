@@ -1,14 +1,12 @@
-"use client";
 import { LucideCode } from "lucide-react";
-import { Button, buttonVariants } from "./ui/button";
+import { buttonVariants } from "./ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { skillList, skillList1, skillList2 } from "@/lib/constants/skills";
-import { motion } from "motion/react";
-import { useEffect } from "react";
+import { skillList1, skillList2 } from "@/lib/constants/skills";
 import { cn } from "@/lib/utils";
 
 export const Skills = () => {
+    
   return (
     <>
       <div className="flex justify-between items-center  px-4 py-2 border-y border-muted">
@@ -32,15 +30,9 @@ export const Skills = () => {
       <div className="overflow-hidden relative">
         <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-linear-to-r from-background to-transparent z-10" />
         <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-linear-to-l from-background to-transparent z-10" />
-        <motion.div
-          className="flex w-max gap-2 pt-3 pb-1 px-2"
-          animate={{ x: "-50%" }}
-          transition={{
-            duration: 60,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-          whileHover={{ animation: "paused" }}
+        <div
+          className="flex w-max gap-2 pt-3 pb-1 px-2 marquee-left"
+         
         >
           {[...skillList1, ...skillList1].map((skill, i) => (
             <div
@@ -65,16 +57,10 @@ export const Skills = () => {
               </span>
             </div>
           ))}
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="flex w-max gap-2 pt-1 pb-3 px-2"
-          animate={{ x: ["-50%", "0%"] }}
-          transition={{
-            duration: 60,
-            ease: "linear",
-            repeat: Infinity,
-          }}
+        <div
+          className="flex w-max gap-2 pt-1 pb-3 px-2 marquee-right"
         >
           {[...skillList2, ...skillList2].map((skill, i) => (
             <div
@@ -99,7 +85,7 @@ export const Skills = () => {
               </span>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </>
   );

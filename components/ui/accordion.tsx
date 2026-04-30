@@ -18,7 +18,7 @@ function AccordionItem({
   children,
   ...props
 }: AccordionPrimitive.Item.Props) {
-  console.log(props);
+
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
