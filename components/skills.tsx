@@ -1,31 +1,32 @@
 "use client";
 import { LucideCode } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { skillList, skillList1, skillList2 } from "@/lib/constants/skills";
 import { motion } from "motion/react";
 import { useEffect } from "react";
+import { cn } from "@/lib/utils";
 
 export const Skills = () => {
   return (
     <>
       <div className="flex justify-between items-center  px-4 py-2 border-y border-muted">
         <h2 className="text-lg font-semibold">Skills</h2>
-        <Button
-          variant={"outline"}
-          size={"xs"}
-          asChild
-          className="rounded-xs ms-auto"
+        <Link
+          type="button"
+          className={cn(
+            buttonVariants({
+              variant: "outline",
+              size: "xs",
+            }),
+            "rounded-xs ms-auto",
+          )}
+          href={"/experience"}
         >
-          <Link
-            href={"/skills"}
-            className="flex items-center justify-center gap-2"
-          >
-            <span>View All</span>
-            <LucideCode size={20} />
-          </Link>
-        </Button>
+          <span>View All</span>
+          <LucideCode size={20} />
+        </Link>
       </div>
 
       <div className="overflow-hidden relative">
@@ -39,7 +40,7 @@ export const Skills = () => {
             ease: "linear",
             repeat: Infinity,
           }}
-          whileHover={{ animation: "paused"}}
+          whileHover={{ animation: "paused" }}
         >
           {[...skillList1, ...skillList1].map((skill, i) => (
             <div
@@ -68,7 +69,7 @@ export const Skills = () => {
 
         <motion.div
           className="flex w-max gap-2 pt-1 pb-3 px-2"
-           animate={{ x: ["-50%", "0%"] }}
+          animate={{ x: ["-50%", "0%"] }}
           transition={{
             duration: 60,
             ease: "linear",

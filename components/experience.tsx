@@ -10,24 +10,31 @@ import { cn } from "@/lib/utils";
 import { experiences } from "@/lib/constants/experience";
 import { LucideBriefcaseBusiness, LucideLayers } from "lucide-react";
 import { ToolChip } from "./tools-chip";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import Link from "next/link";
 
 const Experience = () => {
   return (
     <>
-    <div className="px-4 py-2 border-b border-muted flex justify-between items-center">
-       <h2 className="text-lg font-semibold ">
-        Experience
-      </h2>
-      <Button variant={"outline"} size={'xs'} asChild className="rounded-xs ms-auto">
-        <Link href={"/experience"} className="flex items-center justify-center gap-2">
+      <div className="px-4 py-2 border-b border-muted flex justify-between items-center">
+        <h2 className="text-lg font-semibold ">Experience</h2>
+
+        <Link
+          type="button"
+          className={cn(
+            buttonVariants({
+              variant: "outline",
+              size: "xs",
+            }),
+            "rounded-xs ms-auto",
+          )}
+          href={"/experience"}
+        >
           <span>View All</span>
           <LucideLayers size={20} />
         </Link>
-      </Button>
-    </div>
-     
+      </div>
+
       <div className="py-4">
         <Accordion multiple className="max-w-3xl mx-auto px-3 md:px-0">
           {experiences.map((experience, index) => (
