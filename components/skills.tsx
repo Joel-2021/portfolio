@@ -22,7 +22,7 @@ export const Skills = () => {
             }),
             "rounded-xs ms-auto",
           )}
-          href={"/experience"}
+          href={"/skills"}
         >
           <span>View All</span>
           <LucideCode size={20} />
