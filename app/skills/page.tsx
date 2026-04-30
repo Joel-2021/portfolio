@@ -15,14 +15,14 @@ const SkillsPage = () => {
 
       <HorizontalLines />
 
-      {skills.map((skill) => (
+      {skills.map((skill, index) => (
         <div key={skill.title}>
           <h3 className="text-sm font-medium uppercase font-mono px-3 py-3 before:content-[''] relative before:absolute before:h-1.5 before:w-1.5 before:bg-neutral-500 before:top-1/2 before:transform before:-translate-y-1/2">
             <span className="ps-3">{skill.title}</span>
           </h3>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(50px,120px))] justify-start gap-1.5 md:gap-3 px-3 py-1 pb-3">
             {skill.techStack.map((tech) => (
-              <div className="aspect-square relative group/skill flex flex-col gap-2 items-center justify-center border bg-neutral-500/5 p-3 h-full max-h-30 border-dashed border-neutral-500/30 hover:bg-zinc-300/50 dark:hover:bg-zinc-400/10">
+              <div key={tech.icon} className="aspect-square relative group/skill flex flex-col gap-2 items-center justify-center border bg-neutral-500/5 p-3 h-full max-h-30 border-dashed border-neutral-500/30 hover:bg-zinc-300/50 dark:hover:bg-zinc-400/10">
                 <span className="absolute h-3 w-3 border-r-2 border-t-2 border-neutral-400/40 -top-px -right-px"></span>
                 <span className="absolute h-3 w-3 border-l-2 border-t-2 border-neutral-400/40 -top-px -left-px"></span>
                 <span className="absolute h-3 w-3 border-b-2 border-r-2 border-neutral-400/40 -bottom-px -right-px"></span>
@@ -50,8 +50,7 @@ const SkillsPage = () => {
               </div>
             ))}
           </div>
-
-          <HorizontalLines />
+          {index !== skills.length - 1 && <HorizontalLines />}
         </div>
       ))}
     </>

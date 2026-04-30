@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { VerticalLines } from "@/components/vertical-lines";
 import { Header } from "@/components/header";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const geist = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
@@ -22,15 +23,19 @@ export default function RootLayout({
 }>) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      <html lang="en" className={cn("font-sans", inter.variable, geist.variable)}>
+      <html
+        lang="en"
+        className={cn("font-sans", inter.variable, geist.variable)}
+      >
         <body className={`${inter.variable} ${geist.variable} antialiased`}>
           <div className="min-h-screen w-full flex items-stretch px-2 md:px-0">
             <VerticalLines classname="left-0 md:block hidden" />
-            <div className="min-h-screen h-full max-w-4xl w-full mx-auto border-x border-muted">
+            <div className="min-h-screen flex flex-col h-full max-w-4xl w-full mx-auto border-x border-muted">
               <Header />
-              {children}
+              <div className="grow">{children}</div>
+              <Footer />
             </div>
-            <VerticalLines classname="right-0 hidden md:block"/>
+            <VerticalLines classname="right-0 hidden md:block" />
           </div>
         </body>
       </html>

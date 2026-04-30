@@ -21,10 +21,10 @@ export default function Home() {
         </h1>
 
         <div className="flex justify-between items-center gap-5">
-          <Link href="https://github.com/joel-2021" target="_blank">
+          <Link href={links.github} target="_blank">
             <GithubIcon size={20} />
           </Link>
-          <Link href="https://linkedin.com/in/joel-c-v" target="_blank">
+          <Link href={links.linkedin} target="_blank">
             <LinkedinIcon size={20} />
           </Link>
         </div>
