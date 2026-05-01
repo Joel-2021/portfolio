@@ -28,6 +28,7 @@ export const IconButton = ({
       variant="outline"
       size="xs"
       name={label}
+      aria-label={label}
       className="rounded-xs flex items-center gap-2"
       onMouseEnter={() => iconRef.current?.startAnimation()}
       onMouseLeave={() => iconRef.current?.stopAnimation()}

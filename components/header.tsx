@@ -70,6 +70,7 @@ export const Header = () => {
             variant={"ghost"}
             size={"sm"}
             name="toggle-theme"
+            aria-label="theme-toggler"
             className={"cursor-pointer"}
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >

@@ -54,10 +54,10 @@ const Introduction = () => {
         </motion.h1>
 
         <motion.div variants={item} className="flex gap-5">
-          <Link href={links.github} target="_blank">
+          <Link href={links.github} target="_blank" aria-label="github-profile">
             <GithubIcon size={20} />
           </Link>
-          <Link href={links.linkedin} target="_blank">
+          <Link href={links.linkedin} target="_blank" aria-label="linkedin-profile">
             <LinkedinIcon size={20} />
           </Link>
         </motion.div>
