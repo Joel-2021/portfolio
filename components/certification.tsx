@@ -35,6 +35,7 @@ const Certifications = () => {
               {certificate.link && (
                 <Button
                   size={"icon"}
+                  name="open certificate"
                   variant={"ghost"}
                   onClick={() => window.open(certificate?.link, "_blank")}
                 >

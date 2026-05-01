@@ -69,6 +69,7 @@ export const Header = () => {
           <Button
             variant={"ghost"}
             size={"sm"}
+            name="toggle-theme"
             className={"cursor-pointer"}
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >

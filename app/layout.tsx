@@ -51,11 +51,11 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem enableColorScheme>
           <div className="min-h-screen w-full flex items-stretch px-2 md:px-0">
             <VerticalLines classname="left-0 md:block hidden" />
-            <div className="min-h-screen flex flex-col h-full max-w-4xl w-full mx-auto border-x border-muted">
+            <main className="min-h-screen flex flex-col h-full max-w-4xl w-full mx-auto border-x border-muted">
               <Header />
               <div className="grow">{children}</div>
               <Footer />
-            </div>
+            </main>
             <VerticalLines classname="right-0 hidden md:block" />
           </div>
         </ThemeProvider>
