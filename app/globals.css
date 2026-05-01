@@ -155,10 +155,12 @@
   animation: marquee-right 60s linear infinite;
 }
 
-.marquee-left:hover {
-  animation-play-state: paused;
-}
+@media (min-width: 1024) {
+  .marquee-left:hover {
+    animation-play-state: paused;
+  }
 
-.marquee-right:hover {
-  animation-play-state: paused;
+  .marquee-right:hover {
+    animation-play-state: paused;
+  }
 }

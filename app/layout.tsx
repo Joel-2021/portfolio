@@ -12,6 +12,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const geist = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio-three-nu-77.vercel.app/"),
   title: {
     default: "Joel C V | FullStack Developer",
     template: "%s | Joel C V",
@@ -33,6 +34,10 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
@@ -41,12 +46,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      <html
-        lang="en"
-        className={cn("font-sans", inter.variable, geist.variable)}
-      >
-        <body className={`${inter.variable} ${geist.variable} antialiased`}>
+    <html lang="en" className={cn("font-sans", inter.variable, geist.variable)}>
+      <body className={`${inter.variable} ${geist.variable} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem enableColorScheme>
           <div className="min-h-screen w-full flex items-stretch px-2 md:px-0">
             <VerticalLines classname="left-0 md:block hidden" />
             <div className="min-h-screen flex flex-col h-full max-w-4xl w-full mx-auto border-x border-muted">
@@ -56,8 +58,8 @@ export default function RootLayout({
             </div>
             <VerticalLines classname="right-0 hidden md:block" />
           </div>
-        </body>
-      </html>
-    </ThemeProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

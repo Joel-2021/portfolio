@@ -10,7 +10,7 @@ const Footer = () => {
       <HorizontalLines />
       <div className="px-4 py-2">
         <Link href={"/"}>
-          <h1 className="font-black mb-2 text-3xl text-transparent bg-clip-text bg-[repeating-linear-gradient(var(--muted-foreground)_0,var(--muted-foreground)_1px,transparent_1px,transparent_3px)]">
+          <h1 className="font-black mb-2 text-3xl text-transparent bg-clip-text bg-[repeating-linear-gradient(30deg,var(--muted-foreground)_0,var(--muted-foreground)_1px,transparent_1px,transparent_3px)]">
             JCV
           </h1>
         </Link>
