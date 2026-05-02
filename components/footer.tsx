@@ -3,17 +3,31 @@ import Link from "next/link";
 import { GithubIcon } from "./ui/github-icon";
 import { LinkedinIcon } from "./ui/linkedin-icon";
 import { links } from "@/lib/constants/links";
+import { Redis } from "@upstash/redis";
+import { Eye } from "lucide-react";
 
-const Footer = () => {
+const redis = Redis.fromEnv();
+
+const Footer = async () => {
+  const views = (await redis.get<number>("unique_visitors:portfolio")) ?? 0;
+
   return (
     <>
       <HorizontalLines />
       <div className="px-4 py-2">
-        <Link href={"/"}>
-          <h1 className="font-black mb-2 text-3xl text-transparent bg-clip-text bg-[repeating-linear-gradient(30deg,var(--muted-foreground)_0,var(--muted-foreground)_1px,transparent_1px,transparent_3px)]">
-            JCV
-          </h1>
-        </Link>
+        <div className="flex items-center justify-between">
+          <Link href={"/"}>
+            <h1 className="font-black mb-2 text-3xl text-transparent bg-clip-text bg-[repeating-linear-gradient(30deg,var(--muted-foreground)_0,var(--muted-foreground)_1px,transparent_1px,transparent_3px)]">
+              JCV
+            </h1>
+          </Link>
+
+          <div className="flex items-center gap-1 text-sm font-mono font-medium">
+            <Eye size={16}/>
+            {views}
+          </div>
+        </div>
+
         <div className=" flex justify-between items-end ">
           <ul>
             <li>
