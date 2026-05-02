@@ -96,9 +96,33 @@ const Footer = () => {
         </div>
       </div>
       <p className="font-mono text-xs border-y py-2 mb-3 border-muted text-center">
-        Built By - <span>Joel</span>
+        Built By -{" "}
+        <Link
+          href={links.linkedin}
+          target="_blank"
+          className="underline font-semibold"
+        >
+          Joel
+        </Link>
         <br />
-        Source code available in{" "}
+        Heavily inspired by{" "}
+        <Link
+          href={links.chanhdai}
+          target="_blank"
+          className="underline font-semibold"
+        >
+          Chanh dai
+        </Link>{" "}
+        &{" "}
+        <Link
+          href={links.bilal}
+          target="_blank"
+          className="underline font-semibold"
+        >
+          Bilal
+        </Link>
+        <br />
+        Source code available on{" "}
         <Link
           href={links.portfolio}
           target="_blank"
