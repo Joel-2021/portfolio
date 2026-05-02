@@ -25,10 +25,10 @@ export const Header = () => {
       path: "/skills",
       title: "Skills",
     },
-    {
-      path: "/projects",
-      title: "Projects",
-    },
+    // {
+    //   path: "/projects",
+    //   title: "Projects",
+    // },
   ];
 
   return (

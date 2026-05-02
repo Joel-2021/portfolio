@@ -24,7 +24,7 @@ export function TextFlip({
     <motion.div
       layout="size"
       className="inline-flex relative border border-muted px-3 py-0.5"
-      transition={{ duration: 0.3}}
+      transition={{ duration: 0.3 }}
     >
       <span className="h-1 w-1 border-t border-r border-neutral-500 absolute top-0 right-0 animate-pulse" />
       <span className="h-1 w-1 border-t border-l border-neutral-500 absolute top-0 left-0 animate-pulse" />
