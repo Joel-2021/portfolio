@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { VerticalLines } from "@/components/vertical-lines";
 import { Header } from "@/components/header";
 import Footer from "@/components/footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const geist = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
@@ -49,6 +50,7 @@ export default function RootLayout({
     <html lang="en" className={cn("font-sans", inter.variable, geist.variable)}>
       <body className={`${inter.variable} ${geist.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem enableColorScheme>
+          <SpeedInsights/>
           <div className="min-h-screen w-full flex items-stretch px-2 md:px-0">
             <VerticalLines classname="left-0 md:block hidden" />
             <main className="min-h-screen flex flex-col h-full max-w-4xl w-full mx-auto border-x border-muted">
