@@ -9,7 +9,6 @@ import { Header } from "@/components/header";
 import Footer from "@/components/footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
-import { ViewTracker } from "@/components/view-count";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const geist = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
@@ -62,7 +61,7 @@ export default function RootLayout({
               <Footer />
             </main>
             <VerticalLines classname="right-0 hidden md:block" />
-            <ViewTracker/>
+            {/* <ViewTracker/> */}
           </div>
         </ThemeProvider>
       </body>

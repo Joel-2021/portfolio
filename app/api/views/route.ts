@@ -20,10 +20,13 @@ export async function POST(req: NextRequest) {
     req.headers.get("x-real-ip") ??
     null;
 
-
   if (!ip) {
     await redis.incr(VISITOR_KEY);
-    return new NextResponse(null, { status: 200 });
+    const updatedCount = await redis.get<number>(VISITOR_KEY);
+
+    return NextResponse.json({
+      count: updatedCount ?? 0,
+    });
   }
 
   const buf = await crypto.subtle.digest(
@@ -46,5 +49,9 @@ export async function POST(req: NextRequest) {
     await redis.incr(VISITOR_KEY);
   }
 
-  return new NextResponse(null, { status: 200 });
+  const updatedCount = await redis.get<number>(VISITOR_KEY);
+
+  return NextResponse.json({
+    count: updatedCount ?? 0,
+  });
 }

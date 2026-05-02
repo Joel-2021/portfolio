@@ -1,15 +1,25 @@
+"use client";
+
 import { HorizontalLines } from "./horizontal-lines";
 import Link from "next/link";
 import { GithubIcon } from "./ui/github-icon";
 import { LinkedinIcon } from "./ui/linkedin-icon";
 import { links } from "@/lib/constants/links";
-import { Redis } from "@upstash/redis";
 import { Eye } from "lucide-react";
+import { useEffect, useState } from "react";
+import Counter from "./ui/counter";
 
-const redis = Redis.fromEnv();
+const Footer = () => {
+  const [views, setViews] = useState(0);
 
-const Footer = async () => {
-  const views = (await redis.get<number>("unique_visitors:portfolio")) ?? 0;
+  useEffect(() => {
+    if (process.env.NODE_ENV !== "production") return;
+    fetch("/api/views", { method: "POST" })
+      .then((res) => res.json())
+      .then(({ count }) => {
+        setViews(count);
+      });
+  }, []);
 
   return (
     <>
@@ -22,10 +32,7 @@ const Footer = async () => {
             </h1>
           </Link>
 
-          <div className="flex items-center gap-1 text-sm font-mono font-medium">
-            <Eye size={16}/>
-            {views}
-          </div>
+          <Counter from={0} to={views} />
         </div>
 
         <div className=" flex justify-between items-end ">
